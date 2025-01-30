@@ -3,7 +3,7 @@
 // @namespace    https://github.com/nitatemic
 // @version      1.1
 // @description  Automatically generates a barcode next to the EAN (ISBN) code on manga volume pages on Nautiljon. The script extracts the EAN from the "itemprop='isbn'" attribute and uses JsBarcode to render the barcode visually.
-// @author       VotreNom
+// @author       Nitatemic
 // @match        https://www.nautiljon.com/mangas/*
 // @require      https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js
 // @grant        none
