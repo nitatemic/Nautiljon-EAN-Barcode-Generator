@@ -21,13 +21,15 @@ This userscript automatically generates a barcode next to the EAN (ISBN) code on
 ## 🛠️ Installation
 
 1. Install a userscript manager for your browser:
-   - [Tampermonkey](https://www.tampermonkey.net/) (recommended)
+   - [ViolentMonkey](https://violentmonkey.github.io/)(Recommended)
+   - [Tampermonkey](https://www.tampermonkey.net/) 
    - [Greasemonkey](https://www.greasespot.net/)
+   - ~~[AdGuard](https://adguard.com/fr/welcome.html)~~(Not working)
 
-2. Click on the link below to install the script:
+3. Click on the link below to install the script:
    - [Install the Script](https://github.com/nitatemic/Nautiljon-EAN-Barcode-Generator/raw/main/nautiljon-barcode-generator.user.js)
 
-3. Visit a manga volume page on Nautiljon (e.g., [example page](https://www.nautiljon.com/mangas/world-s+end+harem/volume-1,28363.html)) to see it in action!
+4. Visit a manga volume page on Nautiljon (e.g., [Rent-a-Girlfriend Volume 3]([https://www.nautiljon.com/mangas/world-s+end+harem/volume-1,28363.html](https://www.nautiljon.com/mangas/rent-a-girlfriend/volume-3,36568.html))) to see it in action!
 
 ---
 
