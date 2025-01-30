@@ -29,7 +29,7 @@ This userscript automatically generates a barcode next to the EAN (ISBN) code on
 3. Click on the link below to install the script:
    - [Install the Script](https://github.com/nitatemic/Nautiljon-EAN-Barcode-Generator/raw/main/nautiljon-barcode-generator.user.js)
 
-4. Visit a manga volume page on Nautiljon (e.g., [Rent-a-Girlfriend Volume 3]([https://www.nautiljon.com/mangas/world-s+end+harem/volume-1,28363.html](https://www.nautiljon.com/mangas/rent-a-girlfriend/volume-3,36568.html))) to see it in action!
+4. Visit a manga volume page on Nautiljon (e.g., [Rent-a-Girlfriend Volume 3](https://www.nautiljon.com/mangas/world-s+end+harem/volume-1,28363.html](https://www.nautiljon.com/mangas/rent-a-girlfriend/volume-3,36568.html)) to see it in action!
 
 ---
 
