@@ -7,6 +7,7 @@
 // @match        https://www.nautiljon.com/mangas/*
 // @require      https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js
 // @grant        none
+// @license      GPL-3.0-only
 // @homepageURL  https://github.com/nitatemic/Nautiljon-EAN-Barcode-Generator
 // @supportURL   https://github.com/nitatemic/Nautiljon-EAN-Barcode-Generator/issues
 // @updateURL    https://github.com/nitatemic/Nautiljon-EAN-Barcode-Generator/raw/main/nautiljon-barcode-generator.user.js
