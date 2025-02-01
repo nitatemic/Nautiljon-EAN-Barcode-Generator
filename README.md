@@ -50,5 +50,5 @@ This userscript automatically generates a barcode next to the EAN (ISBN) code on
 ### Modify the Script
 1. Clone the repository:
    ```bash
-   git clone https://github.com/VotreNom/nautiljon-barcode-script.git
-   cd nautiljon-barcode-script
+   git clone https://github.com/nitatemic/Nautiljon-EAN-Barcode-Generator.git
+   cd Nautiljon-EAN-Barcode-Generator
