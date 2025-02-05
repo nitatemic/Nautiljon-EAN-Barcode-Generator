@@ -21,10 +21,10 @@ This userscript automatically generates a barcode next to the EAN (ISBN) code on
 ## 🛠️ Installation
 
 1. Install a userscript manager for your browser:
-   - [ViolentMonkey](https://violentmonkey.github.io/)(Recommended)
+   - [AdGuard](https://adguard.com/fr/welcome.html)(Recommended)
+   - [ViolentMonkey](https://violentmonkey.github.io/)
    - [Tampermonkey](https://www.tampermonkey.net/) 
    - [Greasemonkey](https://www.greasespot.net/)
-   - ~~[AdGuard](https://adguard.com/fr/welcome.html)~~(Not working)
 
 3. Click on the link below to install the script:
    - [Install the Script](https://github.com/nitatemic/Nautiljon-EAN-Barcode-Generator/raw/main/nautiljon-barcode-generator.user.js)
