@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         Nautiljon EAN Barcode Generator
 // @namespace    https://github.com/nitatemic
-// @version      1.1
-// @description  Automatically generates a barcode next to the EAN (ISBN) code on manga volume pages on Nautiljon. The script extracts the EAN from the "itemprop='isbn'" attribute and uses JsBarcode to render the barcode visually.
+// @version      1.2
+// @description  Génère automatiquement un code-barres pour l'EAN (ISBN) des mangas sur Nautiljon.
 // @author       Nitatemic
+// @license      GPL-3.0-only
 // @match        https://www.nautiljon.com/mangas/*
 // @require      https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js
-// @grant        none
-// @license      GPL-3.0-only
+// @grant        GM_addStyle
 // @homepageURL  https://github.com/nitatemic/Nautiljon-EAN-Barcode-Generator
 // @supportURL   https://github.com/nitatemic/Nautiljon-EAN-Barcode-Generator/issues
 // @updateURL    https://github.com/nitatemic/Nautiljon-EAN-Barcode-Generator/raw/main/nautiljon-barcode-generator.user.js
@@ -17,36 +17,61 @@
 (function () {
     'use strict';
 
-    // Fonction pour ajouter le code-barres
-    function addBarcode() {
-        // Recherche l'élément contenant l'attribut itemprop="isbn"
+    GM_addStyle(`
+        #barcode-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 9999;
+        }
+        #barcode-close {
+            cursor: pointer;
+            float: right;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    `);
+
+    function extractEAN() {
         const isbnElement = document.querySelector('[itemprop="isbn"]');
-        if (!isbnElement) return; // Si aucun EAN n'est trouvé, on arrête
+        return isbnElement ? isbnElement.textContent.trim().replace(/[^0-9X]/gi, '') : null;
+    }
 
-        // Récupère le code EAN
-        const eanCode = isbnElement.textContent.trim();
-        if (!eanCode) return; // Vérifie que le code EAN existe
+    function createBarcode(eanCode) {
+        const container = document.createElement('div');
+        container.id = 'barcode-container';
 
-        // Crée un conteneur pour le code-barres
-        const barcodeContainer = document.createElement('div');
-        barcodeContainer.style.marginTop = '10px'; // Espacement visuel
+        const closeButton = document.createElement('span');
+        closeButton.id = 'barcode-close';
+        closeButton.innerHTML = '×';
+        closeButton.onclick = () => container.remove();
 
-        // Crée un élément canvas pour le code-barres
-        const canvas = document.createElement('canvas');
-        barcodeContainer.appendChild(canvas);
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.id = 'barcode';
 
-        // Insère le conteneur après l'élément EAN
-        isbnElement.parentNode.appendChild(barcodeContainer);
+        container.appendChild(closeButton);
+        container.appendChild(svg);
+        document.body.appendChild(container);
 
-        // Génère le code-barres
-        JsBarcode(canvas, eanCode, {
-            format: 'EAN13',
+        JsBarcode(svg, eanCode, {
+            format: "EAN13",
             displayValue: true,
-            fontSize: 16,
-            margin: 10,
+            fontSize: 12,
+            margin: 5
         });
     }
 
-    // Exécute la fonction après le chargement de la page
-    window.addEventListener('load', addBarcode);
+    function init() {
+        const eanCode = extractEAN();
+        if (eanCode) {
+            console.log('EAN trouvé:', eanCode);
+            createBarcode(eanCode);
+        }
+    }
+
+    window.addEventListener('load', init, false);
 })();
